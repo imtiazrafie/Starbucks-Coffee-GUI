@@ -1,0 +1,9 @@
+Java Chip Frappucino,16.95
+Mocha Frappucino,14.85
+Caramel Frappucino,14.85
+Iced Americano,10.10
+Iced Latte,13.80
+Iced Caramel Macchiato,15.90
+Caramel Signature Hot Chocolate,14.30
+Hazelnut Signature Hot Chocolate,14.30
+Starbucks Signature Hot Chocolate,13.25
