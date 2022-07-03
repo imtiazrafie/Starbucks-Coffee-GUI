@@ -109,11 +109,9 @@ public class NewOrder extends JFrame {
 		setLocationRelativeTo(null);
 
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 1009, 72);
 		panel.setBackground(new Color(143, 188, 143));
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(71, 110, 877, 383);
 		panel_1.setBackground(new Color(245, 245, 220));
 
 		JPanel panel_2 = new JPanel();
@@ -256,7 +254,7 @@ public class NewOrder extends JFrame {
 				try {
 					gender = genderselector.getSelection().getActionCommand();
 				} catch (Exception e1) {
-					System.out.println(e1.getMessage());
+					System.out.println("Error gender: " + e1.getMessage());
 				}
 
 				// PROCESS STATE
@@ -372,8 +370,6 @@ public class NewOrder extends JFrame {
 		panel_1.add(custnamefield);
 		panel_1.add(btnNewButton_1);
 		panel_1.add(regularcustomercheck);
-		
-		contentPane.setLayout(null);
 
 		lblNewLabel_2 = new JLabel("New order for ID: " + orderid);
 		lblNewLabel_2.setIcon(new ImageIcon(NewOrder.class.getResource("/main/logo/details.png")));
@@ -395,7 +391,21 @@ public class NewOrder extends JFrame {
 					.addContainerGap())
 		);
 		panel.setLayout(gl_panel);
-		contentPane.add(panel);
-		contentPane.add(panel_1);
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(71)
+					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 877, GroupLayout.PREFERRED_SIZE))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(38)
+					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 383, GroupLayout.PREFERRED_SIZE))
+		);
+		contentPane.setLayout(gl_contentPane);
 	}
 }
